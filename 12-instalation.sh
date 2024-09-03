@@ -9,10 +9,18 @@ then
     exit 1
 fi
 
-dnf install mysql -y
+dnf list installed mysql
 if [ $? -ne 0 ] #to check the given package installed  or not 0 mean installed
 then 
     echo "mysql is  not istalled, installing mysql.."
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+    then 
+        echo "mysql instalaton was not success ... check it"
+        exit 1
+    else
+        echo "mysql instalation success"
+    fi     
 else
     echo "mysql already installed. Nothing to  do.."
 fi
