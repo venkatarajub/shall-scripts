@@ -4,4 +4,6 @@ read length
 echo "Please enter the width of rectangle : "
 read width
 
-echo "area of rectangle is ($length*$width)"
+AREA=$(($length*$width))
+
+echo "area of rectangle is $AREA"
