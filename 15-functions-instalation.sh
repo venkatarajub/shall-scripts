@@ -16,5 +16,5 @@ then
     exit 1
 fi
 dnf list installed nginx
-VALIDATE $?
+VALIDATE $? "listing nginx"
 dnf install nginx -y
