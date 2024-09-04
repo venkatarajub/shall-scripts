@@ -14,7 +14,7 @@ then
     echo "Run the script with root previlages"
     exit 1
 fi
-dnf list installed nginx
+dnf list installed nginxx
 
 if [ $? -ne 0 ]
 then
