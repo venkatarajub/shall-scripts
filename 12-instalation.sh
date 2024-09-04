@@ -1,6 +1,6 @@
 #!/bin/bash
 USERID=$(id -u)
-if [ $USERID -ne0 ]
+if [ $USERID -ne 0 ]
 then
     echo "Plrase run the script  with  root privilages"
 
