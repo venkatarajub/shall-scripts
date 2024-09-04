@@ -17,3 +17,4 @@ then
 fi
 dnf list installed nginx
 VALIDATE $?
+dnf install nginx -y
