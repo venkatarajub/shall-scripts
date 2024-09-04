@@ -4,6 +4,7 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo "command is ...FAILED"
+        exit 1
     else 
         echo "commad is ...SUCESS"
     fi
