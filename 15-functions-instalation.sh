@@ -1,7 +1,12 @@
 #!/bin/bash
 USERID=$(id -u)
 VALIDATE(){
-    echo  "exit status : $1"
+    if [ $1 -ne 0 ]
+    then
+        echo "command is ...FAILED"
+    else 
+        echo "commad is ...SUCESS"
+    fi
 }
 
 if [ $USERID -ne 0 ]
