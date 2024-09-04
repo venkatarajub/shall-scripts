@@ -18,3 +18,4 @@ then
     fi  
 elase 
     echo "nginx already installed nothing to do.."
+fi
