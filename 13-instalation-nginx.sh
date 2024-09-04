@@ -13,9 +13,9 @@ then
     then
         echo "nginx instalation failed. Please check"
         exit 1
-    elase
+    else
         echo  "nginx instalsation successfully completed."
     fi  
-elase 
+else 
     echo "nginx already installed nothing to do.."
 fi
