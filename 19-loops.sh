@@ -19,6 +19,7 @@ VALIDATE(){
         exit 1
     else 
         echo "$@ is .. $G SUCCESS $N"
+    fi
 }
 
 CHECK_ROOT
