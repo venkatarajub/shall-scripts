@@ -2,7 +2,7 @@
 #write a script to install  multiplepackages
 USERID=$(id -u)
 R="\e[31m"
-G="\e[32m"
+G="\e[35m"
 
 CHECK_ROOT(){
         if [ $USERID -ne 0 ]
