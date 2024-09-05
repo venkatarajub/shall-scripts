@@ -35,6 +35,7 @@ USAGE(){
     exit 1
 }
 
+echo "Script started executed at : $(date)"
 CHECK_ROOT
 
 if [ $# -eq 0 ]
