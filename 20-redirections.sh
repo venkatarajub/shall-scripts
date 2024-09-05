@@ -9,7 +9,7 @@ N="\e[0m"
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-        echo "Run the script with root privilages"
+        echo -e "$Y Run the script with root privilages $N"
         exit 1
     fi 
 }
