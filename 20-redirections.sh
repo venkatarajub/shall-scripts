@@ -39,7 +39,7 @@ CHECK_ROOT
 
 if [ $# -eq 0 ]
 then
-    UASGE
+    USAGE
 fi
 
 for package in $@
