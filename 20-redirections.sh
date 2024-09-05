@@ -26,17 +26,15 @@ VALIDATE(){
 
 CHECK_ROOT
 
-#if you  need to  install multiple  packages we need to write loop
-
-for $package in $@
+for package in $@
 do
-   dnf list installed $package
-   if [ $? -ne 0  ]
-   then
-        echo "$package not installed. Going to  install..."
+    dnf list installed $package
+    if [ $? -ne  0 ]
+    then 
+        echo "$package not installed. Installing $package"
         dnf install $package -y
-        VALIDATE $? installed $package
+        VALIDATE $? "Intalled $package"
     else
-        echo "$package already installed. Nothing to do"
+        echo -e "$G $package already installed. Nothing to do $N"
     fi
 done
