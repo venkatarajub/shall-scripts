@@ -16,7 +16,7 @@ mkdir -p $LOGS_FOLDER
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-        echo -e "$R Run the script with root privilages $N" &>>$LOG_FILE
+        echo -e "$R Run the script with root privilages $N" | tee -a &>>$LOG_FILE
         exit 1
     fi 
 }
@@ -24,10 +24,10 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-        echo "$2 is ... FAILED" &>>$LOG_FILE
+        echo "$2 is ... FAILED" &>>$LOG_FILE | tee -a &>>$LOG_FILE
         exit 1
     else
-        echo "$2 is ... SUCCESS" &>>$LOG_FILE
+        echo "$2 is ... SUCCESS" &>>$LOG_FILE | tee -a &>>$LOG_FILE
     fi
 }
 USAGE(){
@@ -52,6 +52,6 @@ do
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? installed $package &>>$LOG_FILE
     else
-        echo "$package already installed nothing  to do" &>>$LOG_FILE
+        echo "$package already installed nothing  to do" | tee -a &>>$LOG_FILE
     fi
 done
