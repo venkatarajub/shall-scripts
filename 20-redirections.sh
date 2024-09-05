@@ -30,13 +30,13 @@ CHECK_ROOT
 
 for $package in $@
 do
-dnf list installed $package
-if [ $? -ne 0 ]
-then
-    echo "$package not installed. going to install..."
-    dnf install $package -y
-    VALIDATE $? Installed $package
-else
-    echo "$package already installed. Nothing to do..."
-fi
+    dnf list installed $package
+    if [ $? -ne 0 ]
+    then
+        echo "$package not installed. going to install..."
+        dnf install $package -y
+        VALIDATE $? Installed $package
+    else
+        echo "$package already installed. Nothing to do..."
+    fi
 done
