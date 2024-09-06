@@ -16,7 +16,7 @@ CHECK_ROOT(){
 
 USAGE(){
 
-   echo -e "$Y USAGE :: sudo sh 21-redirections-tee.sh package1 package2 package3 ..." 
+   echo -e "$Y USAGE :: sudo sh 21-redirections-tee.sh package1 package2 package3 ... $N" 
    exit 1
 }
 
