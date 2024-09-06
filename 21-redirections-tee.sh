@@ -16,24 +16,24 @@ CHECK_ROOT(){
     
     if [ $USERID -ne 0 ]
     then
-        echo -e "$R Run the script with root privilages $N" &>>$LOG_FILE
+        echo -e "$R Run the script with root privilages $N" | tee -a $LOG_FILE
         exit 1
     fi
 }
 
 USAGE(){
 
-   echo -e "$Y USAGE :: sudo sh 21-redirections-tee.sh package1 package2 package3 ... $N" &>>$LOG_FILE 
+   echo -e "$Y USAGE :: sudo sh 21-redirections-tee.sh package1 package2 package3 ... $N" | tee -a $LOG_FILE 
    exit 1
 }
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is ... $R FAILED $N" &>>$LOG_FILE
+        echo -e "$2 is ... $R FAILED $N" | tee -a $LOG_FILE
         exit 1
     else
-        echo -e "$2 is ... $G SUCCESS $N" &>>$LOG_FILE
+        echo -e "$2 is ... $G SUCCESS $N" | tee -a $LOG_FILE
     fi
 }
 
@@ -51,8 +51,8 @@ do
     then
         echo -e "$Y $package is not installed. going to install... $N" &>>$LOG_FILE
         dnf install $package -y &>>$LOG_FILE
-        VALIDATE $? $package installed &>>$LOG_FILE
+        VALIDATE $? $package installed |  tee -a $LOG_FILE
     else
-        echo -e "$G  $package already installed. nothing to do $N" &>>$LOG_FILE
+        echo -e "$G  $package already installed. nothing to do $N" | tee -a $LOG_FILE
     fi
 done
