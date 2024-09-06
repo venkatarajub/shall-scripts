@@ -14,6 +14,12 @@ CHECK_ROOT(){
     fi
 }
 
+USAGE(){
+
+   echo -e "$Y USAGE :: sudo sh 21-redirections-tee.sh package1 package2 package3 ..." 
+   exit 1
+}
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
