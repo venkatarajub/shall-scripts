@@ -32,7 +32,10 @@ VALIDATE(){
 
 CHECK_ROOT
 
-USAGE
+if  [ $# -eq 0 ]
+then 
+    USAGE
+fi
 
 for package in $@
 do
