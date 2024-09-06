@@ -11,6 +11,7 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 mkdir -p $LOGS_FOLDER
 
+echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 CHECK_ROOT(){
     
@@ -49,7 +50,7 @@ do
     dnf list installed $package &>>$LOG_FILE
     if [ $? -ne 0 ]
     then
-        echo -e "$Y $package is not installed. going to install... $N" &>>$LOG_FILE
+        echo -e "$Y $package is not installed. going to install... $N" |tee -a $LOG_FILE
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? $package installed |  tee -a $LOG_FILE
     else
