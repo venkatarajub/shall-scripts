@@ -32,6 +32,8 @@ VALIDATE(){
 
 CHECK_ROOT
 
+USAGE
+
 for package in $@
 do
     dnf list installed $package
