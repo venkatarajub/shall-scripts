@@ -53,6 +53,6 @@ do
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? $package installed |  tee -a $LOG_FILE
     else
-        echo -e "$G  $package already installed. nothing to do $N" | tee -a $LOG_FILE
+        echo -e "$package already installed. $G nothing to do $N" | tee -a $LOG_FILE
     fi
 done
