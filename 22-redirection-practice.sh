@@ -33,18 +33,19 @@ VALIDATE(){
 }
 
 USAGE(){
-    if [ $# -eq  0 ]
-    then 
+    
         echo -e "$Y  USAGE :: sudo sh 22-redirection-practice.sh package1 package2 package3 ... $N" | tee -a $LOG_FILE
         exit 1
-    fi
 }
 
 echo -e "$Y Script start running on $(date) $N" | tee -a $LOG_FILE
 
 CHECK_ROOT
 
-USAGE
+if [ $# -eq 0 ]
+then 
+    USAGE
+fi
 
 for package in $@
 do
