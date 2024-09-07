@@ -37,6 +37,7 @@ USAGE(){
     then 
         echo -e "$Y  USAGE :: sudo sh 22-redirection-practice.sh package1 package2 package3 ... $N" | tee -a $LOG_FILE
         exit 1
+    fi
 }
 
 echo -e "$Y Script start running on $(date) $N" | tee -a $LOG_FILE
