@@ -1,5 +1,5 @@
 #!/bin/bash
-SOURCE_DIR="/home/ec2-user"
+SOURCE_DIR="/home/ec2-user/log" #DIR in which files need to check
 
 if [ -d $SOURCE_DIR ]
 then
