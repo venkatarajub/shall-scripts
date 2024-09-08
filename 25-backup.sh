@@ -18,3 +18,20 @@ if [ $# -lt 2 ]
 then
     USAGE
 fi
+
+#check given DIR exists or not
+
+if [ -d $SOURCE_DIR ]
+then
+    echo "$SOURCE_DIR exists"
+else
+    echo "$SOURCE_DIR not exists.. Please check"
+    exit 1
+fi
+
+if [ -d $DEST_DIR ]
+then 
+    echo  "$DEST_DIR exists"
+else
+    echo "$DEST_DIR not exists. please check"
+fi
