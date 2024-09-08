@@ -41,10 +41,11 @@ FILES=$(find $SOURCE_DIR  -name "*.log" -mtime +14)
 
 echo "files are $FILES"
 
-if [ -f $FILES ]
-then
-    echo "files exists"
+#check $FILES empty or not
+
+if [ ! -z $FILES ]
+then 
+    echo "files are found"
 else
-    echo "files doesn't exist .. please check"
-    exit 1
+    echo "Files are not found older then $DAYS"
 fi
