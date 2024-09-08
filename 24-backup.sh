@@ -29,3 +29,34 @@ if [ ! -d $DESTINATION_DIR ]
 then 
     echo "$DESTINATION_DIR not exits ..  please  check"
 fi
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
+
+echo  "Files : $FILES"
+
+if [ ! -z $FILES ]
+then 
+    echo "Files are are found"
+    ZIP_FILE=$DESTINATION_DIR/app-logs-$TIMESTAMP.zip
+    find $SOURCE_DIR -name "*.log" -mtime +14 | zip $ZIP_FILE
+    #check zip file created or not using if condition
+    if [ -f $ZIP_FILE ]
+    then 
+        echo "Successfully Zipped files older than $DAYS"
+        
+        #remove the files  from source  dir
+        while IFS= read -r file
+        do
+            echo "Deleting file : $file"
+            rm -rf $file
+        done <<< $FILES
+    else
+        echo "Zipping the files is failed"
+        exit 1
+    fi
+else
+    echo "echo "No files older than $DAYS"
+fi
+
+
+
