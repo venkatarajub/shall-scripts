@@ -10,8 +10,9 @@ else
     exit 
 fi
 
+FILES=$(find /home/ec2-user -name "*.log" -mtime +14)
 
-find /home/ec2-user -name "*.log" -mtime +14
+echo "14days older files are $FILES"
 
 
 
