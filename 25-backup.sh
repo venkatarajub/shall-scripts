@@ -14,7 +14,7 @@ USAGE(){
 
 }
 
-if [ $# -ln  2 ]
+if [ $# -ln 2 ]
 then
     USAGE
 fi
