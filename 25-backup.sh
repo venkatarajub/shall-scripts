@@ -39,11 +39,12 @@ fi
 
 FILES=$(find $SOURCE_DIR  -name "*.log" -mtime +14)
 
-echo " files are $FILES"
+echo "files are $FILES"
 
 if [ -f $FILES ]
 then
     echo "files exists"
 else
-    echo "files doesn't exist"
+    echo "files doesn't exist .. please check"
+    exit 1
 fi
