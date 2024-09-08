@@ -10,7 +10,7 @@ else
     exit 
 fi
 
-FILES=$(find /home/ec2-user -name "*.log" -mtime +14)
+FILES=$(find /home/ec2-user -name "*.log}" -mtime +14)
 
 echo "14days older files are $FILES"
 
@@ -18,7 +18,7 @@ while IFS= read -r line
 do
     echo "Deleteing line : $line"
     rm  -rf $line
-    
+
 done <<<$FILES
 
 
