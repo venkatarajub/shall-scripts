@@ -1,12 +1,13 @@
 #!/bin/bash
 SOURCE_DIR="/home/ec2-user"
 
-if [ -d $SOURCE_DIR -ne 0 ]
+if [ -d $SOURCE_DIR ]
 then
-    echo "directory not exists"
-    exit 1
+    echo "$SOURCE_DIR exists"
+    
 else
-    echo "directory exists"
+    echo "$SOURCE_DIR not exists"
+    exit 
 fi
 
 
