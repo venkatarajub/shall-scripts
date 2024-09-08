@@ -43,9 +43,10 @@ echo "files are $FILES"
 
 #check $FILES empty or not
 
-if [ ! -z $FILES ]
+if [ -z $FILES ]
 then 
-    echo "files are found"
-else
     echo "Files are not found older then $DAYS"
+    exit 1
+else
+    echo "files are found"
 fi
