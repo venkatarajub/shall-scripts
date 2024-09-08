@@ -1,7 +1,7 @@
 #!/bin/bash
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
-DAYS=$(3:-14)
+DAYS=${3:-14}
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 R="\e[31m"
